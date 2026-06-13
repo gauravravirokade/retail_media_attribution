@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: slv_cookie_proxy
+    columns:
+      - name: flybuys_cookie_token
+        tests:
+          - unique
+          - not_null
+
+  - name: slv_ttd_match
+    columns:
+      - name: ttd_id_token
+        tests:
+          - unique
+          - not_null
+
+  - name: slv_device_match
+    columns:
+      - name: device_id_token
+        tests:
+          - unique
+          - not_null
+
+  - name: slv_purchases
+    columns:
+      - name: purchase_line_item_id
+        tests:
+          - unique
+          - not_null
