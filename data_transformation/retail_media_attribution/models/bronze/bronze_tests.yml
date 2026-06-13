@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: bnz_impressions
+    description: "Event-level campaign impression logs with duplicate tracking flags."
+    columns:
+      - name: impression_id
+        tests:
+          - not_null
+
+  - name: bnz_cookie_proxy
+    description: "Mapping bridge between Flybuys cookies and proxy identities."
+    columns:
+      - name: flybuys_cookie_token
+        tests:
+          - unique
+          - not_null
+
+  - name: bnz_ttd_match
+    description: "Mapping bridge between TTD tokens and proxy identities."
+    columns:
+      - name: ttd_id_token
+        tests:
+          - unique
+          - not_null
+
+  - name: bnz_device_match
+    description: "Mapping bridge between hardware Device IDs and proxy identities."
+    columns:
+      - name: device_id_token
+        tests:
+          - unique
+          - not_null
+
+  - name: bnz_member_proxy
+    description: "Deterministic link mapping between proxy identities and member accounts."
+    columns:
+      - name: member_proxy_id
+        tests:
+          - unique
+          - not_null
+
+  - name: bnz_purchases
+    description: "Granular SKU-level transaction ledger history."
+    columns:
+      - name: purchase_line_item_id
+        tests:
+          - unique
+          - not_null

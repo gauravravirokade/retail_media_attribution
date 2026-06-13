@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw_source
+    schema: raw
+    database: retail_media_attribution
+    tables:
+      - name: impressions
+      - name: cookie_proxy
+      - name: ttd_match
+      - name: device_match
+      - name: member_proxy
+      - name: purchases
